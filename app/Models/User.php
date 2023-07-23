@@ -41,4 +41,22 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    
+    //CommentaryCommentに対するリレーション
+    public function commentary_comments()
+    {
+        return $this->hasMany(CommentaryComment::class);
+    }
+    
+    //Resultに対するリレーション
+    public function results()
+    {
+        return $this->hasMany(Result::class);
+    }
+    
+    //ExamCommentに対するリレーション
+    public function exam_commtents()
+    {
+        return $this->hasMany(ExamComment::class);
+    }
 }

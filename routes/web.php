@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ExamController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+//exam機能におけるルーティング
+    Route::get('/exam', [ExamController::class, 'index']);
+    Route::get('/exam/{exam}', [ExamController::class, 'examine']);
+    

@@ -7,11 +7,16 @@
         <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
     </head>
     <body>
-        <h1>{{ $years->year }}試験</h1>
-        @foreach ($exams as $exam)
-            <div class='exams'>
-                <div>{{ $exam->question_string }}</div>
-            </div>
-        @endforeach
+        <h1>試験</h1>
+        <form action="/exam/{{ $year->id }}/explanation">
+            @csrf
+            @foreach ($exams as $exam)
+                <div class='exams'>
+                    <div>{{ $exam->question_string }}</div>
+                    <input type="text" placeholder="入力欄"/>
+                </div>
+            @endforeach
+            <input type="submit" value="送信"/>
+        </form>
     </body>
 </html>

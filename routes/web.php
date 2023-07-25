@@ -20,5 +20,5 @@ Route::get('/', function () {
 
 //exam機能におけるルーティング
     Route::get('/exam', [ExamController::class, 'index']);
-    Route::get('/exam/{exam}', [ExamController::class, 'examine']);
-    
+    Route::get('/exam/{year}', [ExamController::class, 'examine']);
+    Route::get('/exam/{year}/explanation', [ExamController::class, 'explanate']);

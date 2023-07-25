@@ -17,6 +17,18 @@ class ExamController extends Controller
     //test:各年の問題ページを表示する
     public function examine(Year $year, Exam $exam)
     {
-        return view('exams.examine')->with(['years' => $year->get()], ['exams' => $exam->get()]);
+        return view('exams.examine')->with([
+            'year' => $year,
+            'exams' => $exam->get(),
+        ]);
+    }
+    
+    //explanate：各年の問題解説ページを表示する
+    public function explanate(Year $year, Exam $exam)
+    {
+        return view('exams.explanate')->with([
+            'year' => $year,
+            'exams' => $exam->get(),
+        ]);
     }
 }

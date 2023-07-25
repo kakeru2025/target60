@@ -37,7 +37,7 @@ class ExamSeeder extends Seeder
             'year_id' => '2',
             'number' => '1',
             'question_string' => '7x-9x を計算しなさい。',
-            'answer' => '-5',
+            'answer' => '-5x',
             'explanation_string' => '仮置き',
         ]);
         
@@ -45,7 +45,7 @@ class ExamSeeder extends Seeder
             'year_id' => '1',
             'number' => '2',
             'question_string' => '-3+(-4)×5計算しなさい。',
-            'answer' => '-27',
+            'answer' => '-23',
             'explanation_string' => '仮置き',
         ]);
     }

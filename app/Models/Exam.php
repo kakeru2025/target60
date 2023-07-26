@@ -20,4 +20,9 @@ class Exam extends Model
     {
         return $this->belongsTo(Year::class);
     }
+    
+    protected $fillable = [
+    'year_id',
+    'question_string'
+];
 }

@@ -7,13 +7,23 @@
         <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
     </head>
     <body>
-        <h1>試験解説</h1>
-        @foreach ($exams as $exam)
-            <div class='exams'>
-                <div>{{ $exam->answer }}</div>
-                <div>{{ $exam->explanation_string }}</div>
-            </div>
-        @endforeach
+        <h1 class="headline1">結果と解説</h1>
+        <div class="exam_score">
+            <h2 clsas="headline2">あなたの得点</h2>
+        </div>
+        <div class="exam_explanations">
+            <h2 clsss="headline2">問題解説</h2>
+            @foreach ($year->exams as $exam)
+                <div class='exam_explantion'>
+                    @foreach ($my_answers->{ $exam->id } as $my_answer)
+                        <div>問題{{ $exam->number }}</div>
+                        <div>あなたの回答：{{ $my_answer }}</div>
+                        <div>正答：{{ $exam->answer }}</div>
+                        <div>解説：{{ $exam->explanation_string }}</div>
+                    @endforeach
+                </div>
+            @endforeach
+        </div>
         <a href='/exam/{{ $year->id }}'>戻る</a>
     </body>
 </html>

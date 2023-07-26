@@ -14,9 +14,9 @@ return new class extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('image_url');
-            $table->string('target_school', 20);
-            $table->text('self-introduction');
+            $table->string('image_url')->nullable();
+            $table->string('target_school', 20)->nullable();
+            $table->text('self-introduction')->nullable();
         });
     }
 

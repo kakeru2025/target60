@@ -15,7 +15,8 @@
             <h2 clsss="headline2">問題解説</h2>
             @foreach ($year->exams as $exam)
                 <div class='exam_explantion'>
-                    @foreach ($my_answers->{ $exam->id } as $my_answer)
+                    <!--my_answersができていない-->
+                    @foreach ($my_answers as $my_answer)
                         <div>問題{{ $exam->number }}</div>
                         <div>あなたの回答：{{ $my_answer }}</div>
                         <div>正答：{{ $exam->answer }}</div>

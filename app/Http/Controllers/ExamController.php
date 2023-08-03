@@ -42,13 +42,10 @@ class ExamController extends Controller
                 $result->user_id = Auth::user()->id;
             }
             $result->save();
+            
             $results[$exam->id]=$result;
         }
-    
-         
- 
-            
-        return view('exams.explanate')->with([
+            return view('exams.explanate')->with([
             'year' => $year,
             'exams' => $exam->get(),
             'my_answers' => $request['my_answer'],
@@ -56,23 +53,5 @@ class ExamController extends Controller
         ]);
     }
     
-    
-     
-    
-    //explanate：各年の問題解説ページを表示する
-    // public function explanate(Year $year, Exam $exam)
-    // {
-    //     if ($ == $exam->answer) {
-    //         //$results->is_correctにtrue
-    //     } else {
-            
-    //     };
-    //      
-    //     return view('exams.explanate')->with([
-    //         'year' => $year,
-    //         'exams' => $exam->get(),
-    //          'my_answer' => $request-> 
-    //     ]);
-    // }
     //$input['user_id']=Auth::id()←foreachの文の中に正誤判定と共に入れる
 }

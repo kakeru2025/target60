@@ -32,14 +32,6 @@ class ExamSeeder extends Seeder
             'explanation_string' => '仮置き',
         ]);
         
-        DB::table('exams')->insert([
-            'year_id' => '1',
-            'number' => '3',
-            'question_string' => '4-3 を計算しなさい。',
-            'answer' => '1',
-            'explanation_string' => '仮置き',
-        ]);
-        
         //2022年の問題
         DB::table('exams')->insert([
             'year_id' => '2',

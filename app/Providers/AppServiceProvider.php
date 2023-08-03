@@ -21,10 +21,8 @@ class AppServiceProvider extends ServiceProvider
      *
      * @return void
      */
-   
-    //ログイン機能の追加
     public function boot()
     {
-      \URL::forceScheme('https');
+        //
     }
 }

@@ -37,8 +37,8 @@ class ExamSeeder extends Seeder
             'number' => '3',
             'question_string' => '$12x^{2}y ÷ 3x × 2y$  を計算しなさい。',
             'answer' => '$8xy^{2}$',
-            'explanation_string' => '仮置き',
         ]);
+
         
         //2022年の問題
         DB::table('exams')->insert([

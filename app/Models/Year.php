@@ -20,4 +20,9 @@ class Year extends Model
     {
         return $this->hasMany(Exam::class);
     }
+    
+    protected $fillable = [
+    'id',
+    'year'
+];
 }

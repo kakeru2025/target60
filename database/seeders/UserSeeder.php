@@ -24,8 +24,8 @@ class UserSeeder extends Seeder
             'password' => Hash::make('123456'),
             'created_at' => new DateTime(),
             'updated_at' => new DateTime(),
-            'target_school' => '所沢',
-            'self_introduction' => '頑張ります！🔥',
+            'target_school' => '所沢高校',
+            'self_introduction' => 'よろしく！🔥',
         ]);
     }
 }

@@ -19,7 +19,7 @@ class ExamSeeder extends Seeder
         DB::table('exams')->insert([
             'year_id' => '1',
             'number' => '1',
-            'question_string' => '7x-3x を計算しなさい。',
+            'question_string' => '7x - 3x を計算しなさい。',
             'answer' => '4x',
             'explanation_string' => '仮置き',
         ]);
@@ -27,7 +27,7 @@ class ExamSeeder extends Seeder
         DB::table('exams')->insert([
             'year_id' => '1',
             'number' => '2',
-            'question_string' => '4×(-7)+20 を計算しなさい。',
+            'question_string' => '4 × (-7) + 20 を計算しなさい。',
             'answer' => '-8',
             'explanation_string' => '仮置き',
         ]);
@@ -35,10 +35,10 @@ class ExamSeeder extends Seeder
         DB::table('exams')->insert([
             'year_id' => '1',
             'number' => '3',
-            'question_string' => '4-3 を計算しなさい。',
-            'answer' => '1',
-            'explanation_string' => '仮置き',
+            'question_string' => '$12x^{2}y ÷ 3x × 2y$  を計算しなさい。',
+            'answer' => '$8xy^{2}$',
         ]);
+
         
         //2022年の問題
         DB::table('exams')->insert([

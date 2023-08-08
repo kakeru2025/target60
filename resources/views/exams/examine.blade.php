@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <title>試験（{{ $year->year }}）</title>
         <!-- Fonts -->
-        <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+        <link href="./style.css" rel="stylesheet">
     </head>
     <body>
         <h1>入試問題（{{ $year->year }}）</h1>

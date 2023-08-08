@@ -25,7 +25,7 @@ class UserSeeder extends Seeder
             'created_at' => new DateTime(),
             'updated_at' => new DateTime(),
             'target_school' => '所沢',
-            'self-introduction' => '頑張ります！🔥',
+            'self_introduction' => '頑張ります！🔥',
         ]);
     }
 }

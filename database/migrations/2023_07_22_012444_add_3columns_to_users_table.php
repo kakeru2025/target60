@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::table('users', function (Blueprint $table) {
             $table->string('image_url')->nullable();
             $table->string('target_school', 20)->nullable();
-            $table->text('self-introduction')->nullable();
+            $table->text('self_introduction')->nullable();
         });
     }
 

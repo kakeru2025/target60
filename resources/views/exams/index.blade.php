@@ -12,7 +12,7 @@
             <div class="sidebar_toppage">
                 <h1 class="logo" id="icon">
                     <a href="./">
-                        <img src="" alt="Target60">
+                        <img src="https://res.cloudinary.com/dghx8vbna/image/upload/v1691553200/target60_logo_acklds.png" alt="Target60">
                     </a>
                 </h1>
                 <div class="sidebar_category">

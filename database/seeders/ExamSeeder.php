@@ -19,7 +19,7 @@ class ExamSeeder extends Seeder
         DB::table('exams')->insert([
             'year_id' => '1',
             'number' => '1',
-            'question_string' => '7x - 3x を計算しなさい。',
+            'question_string' => '\(7x-3x\)　を計算しなさい。',
             'answer' => '4x',
             'explanation_string' => '仮置き',
         ]);
@@ -27,7 +27,7 @@ class ExamSeeder extends Seeder
         DB::table('exams')->insert([
             'year_id' => '1',
             'number' => '2',
-            'question_string' => '4 × (-7) + 20 を計算しなさい。',
+            'question_string' => '\(4\times(-7)+20\)　を計算しなさい。',
             'answer' => '-8',
             'explanation_string' => '仮置き',
         ]);
@@ -35,9 +35,66 @@ class ExamSeeder extends Seeder
         DB::table('exams')->insert([
             'year_id' => '1',
             'number' => '3',
-            'question_string' => '$12x^{2}y ÷ 3x × 2y$  を計算しなさい。',
-            'answer' => '$8xy^{2}$',
+            'question_string' => '\(30xy^2\div5x\div3y\)　を計算しなさい。',
+            'answer' => '\(8xy^2\)',
+            'explanation_string' => '仮置き',
         ]);
+        
+        DB::table('exams')->insert([
+            'year_id' => '1',
+            'number' => '4',
+            'question_string' => '方程式　\(1.3x+0.6=0.5x+3\)　を解きなさい。',
+            'answer' => '\(0.3\)',
+            'explanation_string' => '仮置き',
+        ]);
+        
+        DB::table('exams')->insert([
+            'year_id' => '1',
+            'number' => '5',
+            'question_string' => '\(\dfrac{8}{\sqrt{2}}-3\sqrt{2}\)　をを計算しなさい。',
+            'answer' => '\(\)',
+            'explanation_string' => '仮置き',
+        ]);
+        
+        DB::table('exams')->insert([
+            'year_id' => '1',
+            'number' => '6',
+            'question_string' => '\(x^2-11x+30\)　を因数分解しなさい。',
+            'answer' => '\(\)',
+            'explanation_string' => '仮置き',
+        ]);
+        
+        DB::table('exams')->insert([
+            'year_id' => '1',
+            'number' => '7',
+            'question_string' => '連立方程式　\(\begin{eqnarray}
+  \left\{
+    \begin{array}{l}
+      x + y = 10 \\
+      2x + 4y = 32
+    \end{array}
+  \right.
+\end{eqnarray}\)　を解きなさい。',
+            'answer' => '\(\)',
+            'explanation_string' => '仮置き',
+        ]);
+        
+        DB::table('exams')->insert([
+            'year_id' => '1',
+            'number' => '8',
+            'question_string' => '2次方程式　\(3x^2-5x-1=0\)　を解きなさい。',
+            'answer' => '\(\)',
+            'explanation_string' => '仮置き',
+        ]);
+        
+        DB::table('exams')->insert([
+            'year_id' => '1',
+            'number' => '9',
+            'question_string' => "<h1>サンプルテキストサンプルテキスト<\h1>",
+            'answer' => '\(\)',
+            'explanation_string' => '仮置き',
+        ]);
+        
 
         
         //2022年の問題

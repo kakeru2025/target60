@@ -8,7 +8,7 @@
     <body>
         <h1 class="headline1">結果と解説</h1>
         <div class="exam_score">
-            <h2 clsas="headline2">あなたの得点</h2>
+            <h2 clsas="headline2">{{ Auth::user()->name }}さんの結果</h2>
             @php
                 $sum = 0
             @endphp
@@ -19,12 +19,12 @@
                 @foreach ($results as $result)
                     <tr>
                         @if ($result->is_correct == true) 
-                            <td>第{{ $result->exam_id }}問</td> <td>正解</td>
+                            <td>問題{{ $result->exam->number }}</td> <td>正解</td>
                             @php
                                 $sum = $sum + 4
                             @endphp
                         @else 
-                            <td>第{{ $result->exam_id }}問</td> <td>不正解</td>
+                            <td>問題{{ $result->exam->number }}</td> <td>不正解</td>
                         @endif
                     </tr>
                 @endforeach

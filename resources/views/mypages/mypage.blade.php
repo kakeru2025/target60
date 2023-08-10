@@ -7,19 +7,25 @@
     </head>
     <body>
         <div class="container_general">
-            <div class="header_general"></div>
+            <div class="header_general">
                 <input type="checkbox" class="openSidebarMenu" id="openSidebarMenu">
                 <label for="openSidebarMenu" class="sidebarIconToggle">
                     <div class="spinner diagonal part-1"></div>
                     <div class="spinner horizontal"></div>
                     <div class="spinner diagonal part-2"></div>
                 </label>
+                <div class="app_name">
+                    <a href="./">
+                        target60
+                        <img src="https://res.cloudinary.com/dghx8vbna/image/upload/v1691562396/target60_%E4%B8%B8%E3%83%AD%E3%82%B4_jzlczt.png" alt="target60ロゴ">
+                    </a>
+                </diV>
                 <div class="sidebar_open">
-                    <h1 class="logo" id="domino">
+                    <div class="logo" id="domino">
                         <a href="./">
-                            <img src="" alt="ドミノ">
+                            <img src="https://res.cloudinary.com/dghx8vbna/image/upload/v1691553200/target60_logo_acklds.png" alt="ドミノ">
                         </a>
-                    </h1>
+                    </div>
                     <div class="sidebar_category">
                         <ul>
                             <li class="SC_exam">
@@ -44,7 +50,7 @@
                     </div>
                 </div>
               </div>
-              
+             </div> 
             <div class="body_general" id="mypage">  
                 <h1>{{ Auth::user()->name }}さんのページ</h1>
                 <div class="my_profile">
@@ -60,7 +66,6 @@
                 <div class="my_scores_detail">
                     <p>詳細を載せる</p>
                 </div>
-                <a href="/exam">仮の遷移(Exam)</a>
             </div>
         </div>
          

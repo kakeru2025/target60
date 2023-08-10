@@ -5,6 +5,7 @@
         <title>試験（{{ $year->year }}）</title>
         <!-- Fonts -->
         <link href="./style.css" rel="stylesheet">
+        <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
     </head>
     <body>
         <h1>入試問題（{{ $year->year }}）</h1>

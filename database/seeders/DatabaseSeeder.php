@@ -25,6 +25,8 @@ class DatabaseSeeder extends Seeder
             YearSeeder::class,
             ExamSeeder::class,
             UserSeeder::class,
+            CategorySeedr::class,
+            CommentarySeeder::class,
         ]);
     }
 }

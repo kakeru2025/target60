@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ExamController;
+use App\Http\Controllers\CommentaryController;
 use App\Http\Controllers\MypageController;
 /*
 |--------------------------------------------------------------------------
@@ -31,6 +32,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/exam', [ExamController::class, 'index']);
     Route::get('/exam/{year}', [ExamController::class, 'examine']);
     Route::post('/exam/{year}/explanation', [ExamController::class, 'explanate']);
+    // 
+    Route::get('./explanate', [CommentaryController::class, 'index']);
     //
     Route::get('/mypage', [MypageController::class, 'mypage']);
     Route::get('/mypage/welcome', function () {

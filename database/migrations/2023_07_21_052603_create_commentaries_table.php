@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('commentaries', function (Blueprint $table) {
             $table->id();
             $table->foreignId('category_id')->constrained();
+            $table->string('name', 50)
             $table->string('onepoint_advice_url');
             $table->text('content');
         });

@@ -3,24 +3,33 @@
     <head>
         <meta charset="utf-8">
         <title>試験解説</title>
-        <!-- Fonts -->
-        <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+        <link href="/css/style.css" rel="stylesheet">
     </head>
     <body>
         <h1 class="headline1">結果と解説</h1>
         <div class="exam_score">
-            <h2 clsas="headline2">あなたの得点</h2>
-            @foreach ($results as $result)
-                    @if ($result->is_correct == true) 
-                        <div>
-                            第{{ $result->exam_id }}問：正解
-                        </div>
-                    @else 
-                        <div>
-                            第{{ $result->exam_id }}問：不正解
-                        </div>
-                    @endif
-            @endforeach
+            <h2 clsas="headline2">{{ Auth::user()->name }}さんの結果</h2>
+            @php
+                $sum = 0
+            @endphp
+            <table class="exam_score_table">
+                <tr>
+                    <th>問題</th> <th>正答</th>
+                </tr>
+                @foreach ($results as $result)
+                    <tr>
+                        @if ($result->is_correct == true) 
+                            <td>問題{{ $result->exam->number }}</td> <td>正解</td>
+                            @php
+                                $sum = $sum + 4
+                            @endphp
+                        @else 
+                            <td>問題{{ $result->exam->number }}</td> <td>不正解</td>
+                        @endif
+                    </tr>
+                @endforeach
+            </table>
+            合計点：{{$sum}}点
         </div>
         <div class="exam_explanations">
             <h2 clsss="headline2">問題解説</h2>

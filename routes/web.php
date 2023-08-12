@@ -15,9 +15,7 @@ use App\Http\Controllers\MypageController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -27,11 +25,12 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-    //
+    //ExamContoller
     Route::get('/exam', [ExamController::class, 'index']);
     Route::get('/exam/{year}', [ExamController::class, 'examine']);
     Route::post('/exam/{year}/explanation', [ExamController::class, 'explanate']);
-    //
+    //MypageContoller
+    Route::get('/', [MypageController::class, 'toppage']);
     Route::get('/mypage', [MypageController::class, 'mypage']);
     Route::get('/mypage/welcome', function () {
         return view('mypages.welcome');

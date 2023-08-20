@@ -58,6 +58,4 @@ class ExamController extends Controller
             'results' => $results,
         ]);
     }
-    
-    //$input['user_id']=Auth::id()←foreachの文の中に正誤判定と共に入れる
 }

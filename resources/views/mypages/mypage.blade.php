@@ -17,9 +17,7 @@
                 </label>
                 <div class="app_name">
                     <a href="./">
-                        target60
-                    </a>
-                    <a href="./">
+                        <span>target60</span>
                         <img src="https://res.cloudinary.com/dghx8vbna/image/upload/v1691562396/target60_%E4%B8%B8%E3%83%AD%E3%82%B4_jzlczt.png" alt="target60ロゴ">
                     </a>
                 </diV>
@@ -37,8 +35,8 @@
                                     <p>実力を確かめたいあなたへ</p>
                                 </a>
                             </li>
-                            <li class="SC_explanation">
-                                <a href="./explanation">
+                            <li class="SC_commentary">
+                                <a href="./commentary">
                                     <h2>解説ページ</h2>
                                     <p>実力を高めたいあなたへ</p>
                                 </a>
@@ -55,17 +53,22 @@
               </div>
              </div> 
             <div class="body_general" id="mypage">  
-                <h1>{{ Auth::user()->name }}さんのページ</h1>
+                <h1><span>{{ Auth::user()->name }}さんのページ</span></h1>
                 <div class="mypage_block">
                     <h3>＜プロフィール＞</h3>
                     <div class="my_profile">
-                        <img src="" alt="写真">
-                        <div class="profile_statement">
-                            <p class="target_schhol">[目標高校]：{{ Auth::user()->target_school }}</p>
-                            <p class="self_introduction">[コメント]：{{ Auth::user()->self_introduction }}</p>
+                        <img src="{{ Auth::user()->image_url }}" alt="あなたのイラスト">
+                        <div class="profile_statements">
+                            <div class="profile_statement">
+                                <p class="profile_statement_tittle">[目標高校]：<span>{{ Auth::user()->target_school }}</span></p>
+                            </div>
+                            <div class="profile_statement">
+                                <p class="profile_statement_tittle">[コメント]</p>
+                                <p>{{ Auth::user()->self_introduction }}</p>
+                            </div>
                         </div>
                     </div>
-                    [編集]
+                    <a class="edit_btn" href='/mypage/edit'>編集</a>
                 </div>
                 <div class="mypage_block">
                     <h3>＜今までの結果＞</h3>
@@ -137,8 +140,12 @@
                                         suggestedMax: 100,
                                         suggestedMin: 0,
                                         stepSize: 20,
+                                    },
+                                    plugins: {
+                                        legend: {
+                                            display: false
+                                        }
                                     }
-                                    
                                 },
                             });
                         </script>   
@@ -147,7 +154,60 @@
                 <div class="mypage_block">
                     <h3>＜詳細＞</h3>
                     <div class="my_scores_detail">
-                        <p>詳細を載せる</p>
+                        <table>
+                            <tr>
+                                <th>単元名</th> <th>正答率 [%]</th><th>コメント</th>
+                            </tr>
+                            <!--得点表_単元の得点出しの論理-->
+                            @foreach ($categories as $category)
+                                @php
+                                    $true = 0;
+                                    $all = 0
+                                @endphp
+                                @foreach (Auth::user()->results as $result)
+                                    @if ($category->id == $result->exam->category_id)
+                                        @if ($result->is_correct == true)
+                                            @php
+                                                $true = $true + 1
+                                            @endphp
+                                        @endif
+                                        @php
+                                            $all = $all + 1
+                                        @endphp
+                                    @endif
+                                @endforeach
+                                @if ($all == 0)
+                                    @php
+                                        $rate = 0
+                                    @endphp
+                                @else
+                                    @php
+                                        $rate = $true / $all * 100
+                                    @endphp
+                                @endif
+                                <tr>
+                                    <td>{{ $category->name }}</td> <td>{{ $rate }}</td>
+                                    @if ($rate == 100)
+                                        @php
+                                            $comment ="完璧！"
+                                        @endphp
+                                    @elseif ($rate >= 80)
+                                        @php
+                                            $comment ="ええじゃないか！"
+                                        @endphp
+                                     @elseif ($rate >= 60)
+                                        @php
+                                            $comment ="あと少し！"
+                                        @endphp
+                                     @else
+                                        @php
+                                            $comment ="頑張っていこう！"
+                                        @endphp
+                                    @endif
+                                    <td>{{ $comment }}</td>
+                                </tr>
+                            @endforeach
+                        </table>
                     </div>
                 </div>
             </div>

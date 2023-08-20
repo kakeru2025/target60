@@ -14,4 +14,10 @@ class Category extends Model
     {
         return $this->hasMany(Commentary::class);
     }
+    
+    //Examに対するリレーション
+    public function exams()
+    {
+        return $this->hasMany(Exam::class);
+    }
 }

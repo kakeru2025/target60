@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('years', function (Blueprint $table) {
             $table->id();
-            $table->unsignedInteger('year');
+            $table->string('year', 30);
         });
     }
 

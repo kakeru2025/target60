@@ -30,8 +30,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/exam', [ExamController::class, 'index']);
     Route::get('/exam/{year}', [ExamController::class, 'examine']);
     Route::post('/exam/{year}/explanation', [ExamController::class, 'explanate']);
-    // 
-    Route::get('./explanate', [CommentaryController::class, 'index']);
+    //CommentaryController
+    Route::get('/commentary', [CommentaryController::class, 'unit']);
+    Route::get('/commentary/{commentary}', [CommentaryController::class, 'commentary']);
     //
     //MypageContoller
     Route::get('/', [MypageController::class, 'toppage']);
@@ -39,6 +40,10 @@ Route::middleware('auth')->group(function () {
     Route::get('/mypage/welcome', function () {
         return view('mypages.welcome');
     });
+    Route::get('/mypage/edit', function () {
+        return view('mypages.edit');
+    });
+    Route::put('/mypage', [MypageController::class, 'store']);
 });
 
 require __DIR__.'/auth.php';

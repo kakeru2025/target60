@@ -10,9 +10,9 @@
     <body>
         
                 <h1>解説一覧</h1>
-                @foreach ($ycommentaries as $commentary)
+                @foreach ($commentaries as $commentary)
                     <div>
-                        <a href="/exam/{{ $commentary->id }}">▶ {{ $commentary->name }}</a>
+                        <a href="/commentary/{{ $commentary->id }}">▶ {{ $commentary->name }}</a>
                     </div>
                 @endforeach
             </div>

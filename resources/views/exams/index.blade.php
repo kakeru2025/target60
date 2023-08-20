@@ -36,8 +36,8 @@
                                     <p>実力を確かめたいあなたへ</p>
                                 </a>
                             </li>
-                            <li class="SC_explanation">
-                                <a href="./explanation">
+                            <li class="SC_commentary">
+                                <a href="./commentary">
                                     <h2>解説ページ</h2>
                                     <p>実力を高めたいあなたへ</p>
                                 </a>
@@ -60,45 +60,45 @@
                         <a href="/exam/{{ $year->id }}">▶ {{ $year->year }}</a>
                     </div>
                 @endforeach
-            </div>
-            <div class="exam_score_history">
-                <h3>{{ Auth::user()->name }}さんの成績</h3>
-                <table class="exam_score_table">
-                    <tr>
-                        <th>年</th> <th>正答率 [%]</th>
-                    </tr>
-                    <!--得点表の得点出しの論理-->
-                    @foreach ($years as $year)
-                        @php
-                            $true = 0;
-                            $all = 0
-                        @endphp
-                        @foreach (Auth::user()->results as $result)
-                            @if ($year->id == $result->exam->year_id)
-                                @if ($result->is_correct == true)
+                <div class="exam_score_history">
+                    <h3>{{ Auth::user()->name }}さんの成績</h3>
+                    <table class="exam_score_table">
+                        <tr>
+                            <th>年</th> <th>正答率 [%]</th>
+                        </tr>
+                        <!--得点表の得点出しの論理-->
+                        @foreach ($years as $year)
+                            @php
+                                $true = 0;
+                                $all = 0
+                            @endphp
+                            @foreach (Auth::user()->results as $result)
+                                @if ($year->id == $result->exam->year_id)
+                                    @if ($result->is_correct == true)
+                                        @php
+                                            $true = $true + 1
+                                        @endphp
+                                    @endif
                                     @php
-                                        $true = $true + 1
+                                        $all = $all + 1
                                     @endphp
                                 @endif
+                            @endforeach
+                            @if ($all == 0)
                                 @php
-                                    $all = $all + 1
+                                    $rate = "未受験"
+                                @endphp
+                            @else
+                                @php
+                                    $rate = $true / $all * 100
                                 @endphp
                             @endif
+                            <tr>
+                                <td>{{ $year->year }}</td> <td>{{ $rate }}</td>
+                            </tr>
                         @endforeach
-                        @if ($all == 0)
-                            @php
-                                $rate = "未受験"
-                            @endphp
-                        @else
-                            @php
-                                $rate = $true / $all * 100
-                            @endphp
-                        @endif
-                        <tr>
-                            <td>{{$year->year}}</td> <td>{{ $rate }}</td>
-                        </tr>
-                    @endforeach
-                </table>
+                    </table>
+                </div>
             </div>
         </div>
     </body>

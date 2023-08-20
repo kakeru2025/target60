@@ -7,7 +7,9 @@ use App\Models\User;
 use App\Models\Year;
 use App\Models\Exam;
 use App\Models\Result;
+use App\Models\Category;
 use Illuminate\Support\Facades\Auth;
+use Cloudinary;
 
 class MypageController extends Controller
 {
@@ -22,15 +24,27 @@ class MypageController extends Controller
     } 
     
     // mypage：マイページを表示する
-    public function mypage(User $user, Year $year, Exam $exam, Result $result)
+    public function mypage(Year $year, Exam $exam, Result $result, Category $category)
     {
         return view('mypages.mypage')->with([
-            'user' => $user,
             'years' => $year->get(),
             'exams' => $exam->get(),
             'results' => $result->get(),
+            'categories' => $category->get(),
         ]);
     }
     
+    public function store(Request $request, User $user)
+    {
+        $user = User::find(Auth::user()->id);
+        $input_user = $request['user'];
+        if($request->file('image')) {
+            $image_url = Cloudinary::upload($request->file('image')->getRealPath())->getSecurePath();
+            $input += ['image_url' => $image_url];
+        }
+        $user->fill($input_user)->save();
+        return redirect('/mypage');
+    }
     
 }
+

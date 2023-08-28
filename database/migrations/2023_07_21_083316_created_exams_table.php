@@ -18,11 +18,12 @@ return new class extends Migration
             $table->foreignId('year_id')->constrained();
             $table->unsignedTinyInteger('number');
             $table->unsignedTinyInteger('subnumber')->nullable();
-            $table->string('question_string');
+            $table->text('question_string');
             $table->string('question_image_url')->nullable();
             $table->string('answer', 50);
             $table->text('explanation_string');
             $table->string('explanation_image_url')->nullable();
+            $table->foreignId('category_id')->constrained();
         });
     }
 

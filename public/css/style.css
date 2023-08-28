@@ -1,73 +1,184 @@
-/*全体*/
+/*【全体】*/
 a {
   text-decoration: none;
   color: black;
 }
 
 body{
-    
 	margin: 0;
 }
 
-/*【TopPageについてのCSS】*/
-/*[TopPage] 全体の骨格*/
-.container_toppage {
-    display: block;
-    width: 100%;
+
+
+
+
+
+/*【共通】*/
+/*[クリップ風小見出しh3]*/
+#mypage h3,
+#commentary h3 {
+  position: relative;
+  display: inline-block;
+  margin: 1rem 0 1rem -10px;
+  padding: 1rem 3rem;
+  color: #fff;
+  border-radius: 0 100vh 100vh 0;
+  background: #215bb2;
+  -webkit-box-shadow: 3px 3px 5px rgba(0, 0, 0, .2);
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, .2);
 }
-.header_toppage {
-    height: 60px;
-    width: 100%;
-    margin: 0;
-    text-align:center; 
+#mypage h3:before,
+#commentary h3:before {
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 0;
+  height: 0;
+  content: '';
+  border-top: 10px solid #005276;
+  border-left: 10px solid transparent;
+}
+
+/*[見出しh1]*/
+#index h1:first-letter,
+#examine h1:first-letter,
+#explanate h1:first-letter,
+#unit h1:first-letter,
+#commentary h1:first-letter {
+  font-size: 150%;
+  color: #eb6100;
+}
+#index h1,
+#examine h1,
+#explanate h1,
+#unit h1 { 
+  position: relative;
+  padding: 0.3em;
+}
+#index h1:after,
+#examine h1:after,
+#explanate h1:after,
+#unit h1:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 7px;
+  background: repeating-linear-gradient(-45deg, skyblue, skyblue 2px, white 2px, white 4px);
+}
+
+/*[得点表]*/
+table {
+    margin: auto;
+    border-collapse: collapse;
+    max-width: 80%;
+    text-align: center;
+    overflow: scroll;
+}
+th, td {
+    border: solid 1px black;
+    padding: 5px 15px;
+    writing-mode:horizontal-tb;
+}
+th {
+    color: white;
     background-color: #215bb2;
 }
-.toppage_content {
-    display: flex;
-    width: 100%;
-}
-.sidebar_toppage {
-    width: 20%;
-}
-.body_toppage {
-    display: block;
+
+
+/*【TopPageについてのCSS】*/
+/*[TopPage] 全体の骨格*/
+/*.container_toppage {*/
+/*    display: block;*/
+/*    width: 100%;*/
+/*}*/
+/*.header_toppage {*/
+/*    height: 60px;*/
+/*    width: 100%;*/
+/*    margin: 0;*/
+/*    text-align:center; */
+/*    background-color: #215bb2;*/
+/*}*/
+/*.toppage_content {*/
+/*    display: flex;*/
+/*    width: 100%;*/
+/*}*/
+/*.sidebar_toppage {*/
+/*    width: 20%;*/
+/*}*/
+/*.body_toppage {*/
+/*    display: block;*/
     
-}
+/*}*/
 /*[TopPage] 要素の詳細*/
 /*・サイドバー*/
-.logo {
-    height: 250px;
+/*.logo {*/
+/*    height: 250px;*/
+/*    text-align: center;*/
+/*    box-sizing: border-box;*/
+/*}*/
+
+/*.sidebar_category ul {*/
+/*    padding-left: 0px;*/
+/*}*/
+
+/*.sidebar_category ul li {*/
+/*    list-style:none;*/
+/*    width: 100%;*/
+/*    padding-left: 40px;*/
+/*    font-weight: bold;*/
+/*    cursor: pointer;*/
+/*    border-bottom: 1px dotted;*/
+/*    box-sizing: border-box;*/
+/*}*/
+
+/*.SC_exam {*/
+/*    border-top: 1px dotted;*/
+/*    box-sizing: border-box;*/
+/*}*/
+
+/*.sidebar_category ul li h2 {*/
+/*    color:orange;*/
+/*}*/
+
+/*.sidebar_category ul li p { */
+/*    color:black;*/
+/*}*/
+
+
+
+.upper_toppage,
+.middle_toppage {
+    display: flex;
+}
+.upper_toppage img {
+    width: 30%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: orange;
+    border: 3px solid black;
+}
+.upper_right_toppage {
+    width: 70%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     text-align: center;
-    box-sizing: border-box;
+    position: relative;
+    background: radial-gradient(rgb(169, 214, 255), rgb(0, 80, 159));
+    border: 3px solid black;
 }
-
-.sidebar_category ul {
-    padding-left: 0px;
+.upper_right_toppage_words {
+  width: 100%;
+  top: 50%;
+  position: absolute;
+  transform: translateY(-50%);
 }
-
-.sidebar_category ul li {
-    list-style:none;
+.middle_toppage img {
     width: 100%;
-    padding-left: 40px;
-    font-weight: bold;
-    cursor: pointer;
-    border-bottom: 1px dotted;
-    box-sizing: border-box;
 }
-
-.SC_exam {
-    border-top: 1px dotted;
-    box-sizing: border-box;
-}
-
-.sidebar_category ul li h2 {
-    color:orange;
-}
-
-.sidebar_category ul li p { 
-    color:black;
-}
-
 
 
 
@@ -76,6 +187,7 @@ body{
 /*[Header] 全体の骨格*/
 .container_general {
     display: block;
+    position: relative;
     width: 100%;
     margin: 0;
     box-sizing: border-box;
@@ -83,32 +195,42 @@ body{
 .header_general {
     height: 60px;
     width: 100%;
+    top: 0;
+    left: 0;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     position: fixed;
     text-align:center; 
     background-color: #215bb2;
+    z-index: 100;
 }
 .body_general {
     width: 100%;
-    padding-top: 60px;
+    margin-top: 80px;
 }
 /*[Header] ヘッダー中央*/
+.app_name {
+    display: flex;
+    justify-content: center;
+}
 .app_name a {
+    display: flex;
+    height: 100%;
+    width: 20%;
     font-size: 50px;
     font-family: 'Impact';
     color: white;
+    align-items: center;
+    
     vertical-align:top;
 }
 /*[Header] サイドバー*/
 .sidebar_open {
-    /*display: block;*/
-    /*height: 100%;*/
-    /*width: 20%;*/
-    /*margin-top: 60px;*/
-    /*left: 0;*/
-    margin:0;
+    display: block;
+    height: 100%;
+    width: 20%;
+    top: 60px;
     position: fixed;
     transform: translateX(-100%);
     transition: transform 300ms ease-in-out;
@@ -116,29 +238,27 @@ body{
 }
 /*[Header] サイドバー中身*/
 .logo {
-    height: 250px;
-    width: 250px;
-    margin: 0;
-    border: 3px solid black;
+    width: 96%;
+    margin-left: 2%;
     box-sizing: border-box;
     text-align: center;
 }
 .logo img{
-    
-    border: 3px solid black;
+    width: 100%;
+    aspect-ratio: 1 / 1;
     box-sizing: border-box;
 }
 .sidebar_category ul {
     padding-left: 0px;
 }
 .sidebar_category ul li {
-    list-style:none;
     width: 100%;
     padding-left: 40px;
-    font-weight: bold;
-    cursor: pointer;
     border-bottom: 1px dotted;
     box-sizing: border-box;
+    list-style:none;
+    font-weight: bold;
+    cursor: pointer;
 }
 .SC_exam {
     border-top: 1px dotted;
@@ -219,61 +339,209 @@ input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
 }
 
 
+
+
 /*【MyPageについてのCSS】*/
 /*[Mypage] 全体の骨格*/
 #mypage {
     width: 80%;
     margin-left: 10%;
-    box-sizing: border-box;
     border: 3px solid black;
+    box-sizing: border-box;
 }
 .mypage_block {
     margin: 5% 5%;
-    box-sizing: border-box;
     border: 3px solid black;
+    box-sizing: border-box;
+    /*background-color: rgba(255,165,0,0.6);*/
 }
-.mypage_block h3{
-    
+
+
+#mypage h1:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 7px;
+  background: none;
 }
-/*[Mypage] 詳細部分*/
-/*・ プロフィル写真*/
+
+/*[MyPage] タイトル*/
+/*文字位置*/
+#mypage h1 {
+ position: relative;
+ margin: 30px;
+ 
+ padding: 0;
+ 
+ text-align: center;
+}
+/*端の折りたたまれている部分*/
+#mypage h1:before, #mypage h1:after {
+  position: absolute;
+  z-index: 0;
+  bottom: -10px;
+  display: block;
+  content: '';
+  border: 1em solid #d90606;
+}
+#mypage h1:before {
+  left: -30px;
+  border-left-width: 15px;
+  border-left-color: transparent;
+}
+#mypage h1:after {
+  right: -30px;
+  border-right-width: 15px;
+  border-right-color: transparent;
+}
+/*中央の四角部分*/
+#mypage h1 span {
+  position: relative;
+  z-index: 1;
+  display: block;
+  padding: 1rem 2rem;
+  color: #fff;
+  background: #fa4141;
+}
+/*2箇所の折り畳み跡*/
+#mypage h1 span:before, h1 span:after {
+  position: absolute;
+  bottom: -10px;
+  display: block;
+  width: 10px;
+  height: 10px;
+  content: '';
+  /*border-style: solid;*/
+  /*border-color: #b70505 transparent transparent transparent;*/
+}
+#mypage h1 span:before {
+  left: 0;
+  border-width: 10px 0 0 10px;
+}
+#mypage h1 span:after {
+  right: 0;
+  border-width: 10px 10px 0 0;
+}
+
+
+
+#mypage h1:first-letter {
+  font-size: 100%;
+  color: #fff;
+}
+
+
+
+/*[MyPage] プロフィール写真*/
 .my_profile {
     display: flex;
     margin: 5% 5%;
     box-sizing: border-box;
-    border: 3px solid black;
-}.my_profile img {
+    /*border: 3px solid black;*/
+}
+.my_profile img {
     height: 250px;
     width: 250px;
-    background-color: red
+    border: 5px solid #FFF;
+    box-shadow: 0 0 5px #999;
 }
-/*・ プロフィル文章*/
+/*[MyPage] プロフィル文章*/
+.profile_statements {
+    margin-left: 5%;
+}
 .profile_statement {
-    height: 300px;
-    margin-left: 20%;
-    background-color: blue;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
-
-
-
-
+.profile_statement p{
+    margin: 0;
+}
+.profile_statement_tittle {
+    font-weight: bold;
+    color: blue;
+}
+.profile_statement_tittle span {
+    color: black;
+    background: linear-gradient(transparent 70%, yellow 70%);
+}
+/*[MyPage] 編集ボタン*/
+.edit_btn {
+	display: block;
+	text-align: center;
+	vertical-align: middle;
+	text-decoration: none;
+	width: 50px;
+	margin: auto;
+	margin-bottom: 20px;
+	padding: 1rem 4rem;
+	font-weight: bold;
+	color: #27acd9;
+	background-color: white;
+	border-bottom: 2px solid #27acd9;
+	border-radius: 100vh;
+	box-shadow: 0 2px 7px rgba(0, 0, 0, .3);
+	-webkit-box-shadow: 0 2px 7px rgba(0, 0, 0, .3);
+	transition: 0.5s;
+}
+.edit_btn:hover {
+	color: #fff;
+	background: #27acd9;
+	border-bottom: 2px solid #fff;
+	transform: translateY(3px);
+}
+/*[MyPage] 得点の棒グラフ*/
+.my_scores, .my_scores_detail {
+    margin: 5%;
+}
+/*[MyPage] 単元ごとの得点*/
+.my_scores_detail {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
 
 
 /*explanationについてのCSS*/
 /*全体の構成*/
+#explanate {
+    width: 90%;
+    margin-left: 5%;
+    box-sizing: border-box;
+    border: 3px solid black;
+}
 .exam_score {
     margin: 20px 10% 20px 10%;
     padding: 10px 20px 10px 20px;
     border: 3px solid black;
     border-radius: 20px;
+    overflow: auto;
+}
+.exam_score p {
+    margin-top: 20px;
+    margin-bottom: 0;
+    font-weight: bold;
+    text-decoration: underline;
+}
+.exam_explanations {
+    margin: 20px 10% 20px 10%;
+    border: 3px solid black;
+}
+.exam_explanation{
+    padding: 10px 20px 10px 20px;
+    box-sizing: border-box;
+    border: 3px solid black;
 }
 /*得点表*/
-table {
+.exam_score_table {
+    /*left: 10%;*/
+    /*width: 80%;*/
     border-collapse: collapse;
     max-width: 80%;
     text-align: center;
-    -ms-writing-mode : tb-lr;
-    writing-mode : vertical-lr;
+    -ms-writing-mode: tb-lr;
+    writing-mode: vertical-lr;
+    overflow: scroll;
 }
 th, td {
     border: solid 1px black;
@@ -284,3 +552,148 @@ th {
     color: white;
     background-color: #215bb2;
 }
+
+
+
+/*CommentaryPageについてのCSS】*/
+/*[CommentaryPage] 詳細部分*/
+
+#commentary {
+    width: 80%;
+    margin-left: 10%;
+    box-sizing: border-box;
+    border: 3px solid black;
+}
+/*[CommentaryPage] タイトル*/
+#commentary h1 {
+  position: relative;
+  overflow: hidden;
+  padding: 1.5rem 2rem 1.5rem 130px;
+  border-top: 3px solid #000;
+}
+#commentary h1:before {
+    position: absolute;
+    top: -150%;
+    left: -100px;
+    width: 200px;
+    height: 300%;
+    content: '';
+    -webkit-transform: rotate(25deg);
+    transform: rotate(25deg);
+    background: #000;
+}
+
+#commentary h1 span {
+    font-size: 40px;
+    font-size: 4rem;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    display: block;
+    padding-top: 3px;
+    padding-left: 16px;
+    color: #fff;
+}
+/*[CommentaryPage] ワンポイント解説*/
+#commentary img {
+    width: 96%;
+    margin: 20px 2% 20px 2%;
+    box-sizing: border-box;
+    border: 3px solid black;
+}
+
+
+
+
+
+
+
+
+
+/*【IndexPageについてのCSS】*/
+/*[IndexPage] 全体の骨格*/
+#index {
+    width: 80%;
+    margin-left: 10%;
+    box-sizing: border-box;
+    border: 3px solid black;
+}
+.years {
+    width: 80%;
+    margin: 30px 10% 30px 10%;
+    box-sizing: border-box;
+    border: 3px solid black;
+}
+.years img {
+    width: 50%;
+    margin-left: 25%;
+}
+.exam_score_history {
+    width: 80%;
+    margin: 30px 10% 30px 10%;
+    box-sizing: border-box;
+    background: #006633;
+    color: #fff;
+    border: 8px solid #b2771f; 
+    border-radius: 3px; 
+    box-shadow: 0 0 5px #333, 0 0 5px #555 inset;
+    overflow: auto;
+}
+
+
+
+
+
+/*【ExaminePageについてのCSS】*/
+/*[ExaminePage] 全体の骨格*/
+#examine {
+    width: 80%;
+    margin-left: 10%;
+    box-sizing: border-box;
+}
+/*[ExaminePage] 問題部分*/
+.exam {
+    margin: 30px 20px;
+    box-sizing: border-box;
+}
+.exam p {
+    font-size: 15px;
+}
+.exam input {
+    width: 40%;
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 3px;
+    border: 2px solid #ddd; 
+    box-sizing: border-box; 
+}
+.exams_submit {
+    text-align: center;
+}
+/*[ExaminePage] 注意部分*/
+.cautionbox {
+  margin: 1em 0;
+  background-color: #ffebee;
+  padding: 1em;
+}
+
+.cautionbox-title {
+  color: #ef5350;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.cautionbox-title:before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f071";
+  font-size: 17px;
+}
+
+.cautionbox p {
+  margin: 0;
+  padding: 0;
+}
+
+
+

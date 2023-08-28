@@ -21,6 +21,12 @@ class Exam extends Model
         return $this->belongsTo(Year::class);
     }
     
+    //Categoryに対するリレーション
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
+    
     protected $fillable = [
     'year_id',
     'question_string'

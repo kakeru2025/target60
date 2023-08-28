@@ -17,15 +17,15 @@ class YearSeeder extends Seeder
     public function run()
     {
         DB::table('years')->insert([
-            'year' => '2023',
+            'year' => '2023年',
         ]);
         
          DB::table('years')->insert([
-            'year' => '2022',
+            'year' => '2022年',
         ]);
         
          DB::table('years')->insert([
-            'year' => '2021',
+            'year' => '2021年',
         ]);
     }
 }

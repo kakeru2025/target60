@@ -8,12 +8,8 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-
-       
-        
-        
         <h1>おかえりなさい{{ Auth::user()->name }}さん</h1>
-        <p>なんか～</p>
+        <p>{{ $saying->saying }}</p>
         <a href="/mypage">マイページへ</a>
     </body>
 </html>

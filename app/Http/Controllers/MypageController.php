@@ -8,6 +8,7 @@ use App\Models\Year;
 use App\Models\Exam;
 use App\Models\Result;
 use App\Models\Category;
+use App\Models\Saying;
 use Illuminate\Support\Facades\Auth;
 use Cloudinary;
 
@@ -34,17 +35,26 @@ class MypageController extends Controller
         ]);
     }
     
+    // welcome：おかえりページを表示する
+    public function welcome(Saying $saying)
+    {
+        $saying = Saying::inRandomOrder()->first();
+        
+        return view('mypages.welcome')->with(['saying' => $saying]);
+    }
+    
+    
+    
     public function store(Request $request, User $user)
     {
         $user = User::find(Auth::user()->id);
         $input_user = $request['user'];
         if($request->file('image')) {
             $image_url = Cloudinary::upload($request->file('image')->getRealPath())->getSecurePath();
-            $input += ['image_url' => $image_url];
+            $input_user += ['image_url' => $image_url];
         }
         $user->fill($input_user)->save();
         return redirect('/mypage');
     }
     
 }
-

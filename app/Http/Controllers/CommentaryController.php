@@ -8,9 +8,21 @@ use App\Models\Commentary;
 class CommentaryController extends Controller
 {
     //unit:単元一覧を表示する
-    public function unit(Commentary $commentary)
+    public function unit(Commentary $commentary, Request $request)
     {
-        return view('commentaries.unit')->with(['commentaries' => $commentary->get()]);
+        $keyword = $request->input('keyword');
+
+        $query = Commentary::query();
+
+        if(!empty($keyword)) {
+            $query->where('name', 'LIKE', "%{$keyword}%")
+                ->orWhere('content', 'LIKE', "%{$keyword}%");
+        }
+            $commentaries = $query->get();
+            // dd($commentaries);
+        // $posts = $query->get();
+        return view('commentaries.unit', compact('commentaries', 'keyword'));
+        // return view('commentaries.unit')->with(['commentaries' => $commentary->get()]);
     }
     
     //commentary:各単元の解説ページを表示する

@@ -26,7 +26,7 @@
                         @csrf
                         @foreach ($year->exams as $exam)
                             <div class='exam'>
-                                <p>問題{{ $exam->number }}：{{ $exam->question_string }}</p>
+                                <p>問題{{ $exam->number }}：{!! $exam->question_string !!}</p>
                                 <input type="text" name="my_answer[{{ $exam->id }}]" placeholder="入力欄"/>
                                 <input type="hidden" name="result[exam_id]" value="{{ $exam->id }}">
                             </div>

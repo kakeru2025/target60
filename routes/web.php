@@ -31,19 +31,19 @@ Route::middleware('auth')->group(function () {
     Route::get('/exam/{year}', [ExamController::class, 'examine']);
     Route::post('/exam/{year}/explanation', [ExamController::class, 'explanate']);
     //CommentaryController
-    Route::get('/commentary', [CommentaryController::class, 'unit']);
+    Route::get('/commentary', [CommentaryController::class, 'unit'])->name('commentaries.unit');;
     Route::get('/commentary/{commentary}', [CommentaryController::class, 'commentary']);
     //
     //MypageContoller
     Route::get('/', [MypageController::class, 'toppage']);
     Route::get('/mypage', [MypageController::class, 'mypage']);
-    Route::get('/mypage/welcome', function () {
-        return view('mypages.welcome');
-    });
+    Route::get('/mypage/welcome', [MypageController::class, 'welcome']);
     Route::get('/mypage/edit', function () {
         return view('mypages.edit');
     });
     Route::put('/mypage', [MypageController::class, 'store']);
 });
+
+Route::get('/', [MypageController::class, 'toppage']);
 
 require __DIR__.'/auth.php';

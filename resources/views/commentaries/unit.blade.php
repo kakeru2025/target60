@@ -8,7 +8,30 @@
         <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
-        
+        <div>
+  <form action="{{ route('commentaries.unit') }}" method="GET">
+    <input type="text" name="keyword" value="{{ $keyword }}">
+    <input type="submit" value="検索">
+  </form>
+</div>
+
+<table>
+  <tr>
+    <th>著書名</th><th>著者名</th>
+  </tr>
+
+//* 保存されているレコードを一覧表示　*//
+  @forelse ($commentaries as $commentary)
+    <tr>
+      <td><a href="{{ "./" }}">{{ $commentary->name }}</td></a>
+      <td>a</td>
+    </tr>
+  @empty
+    <td>No posts!!</td>
+  @endforelse
+</table>
+
+
                 <h1>解説一覧</h1>
                 @foreach ($commentaries as $commentary)
                     <div>

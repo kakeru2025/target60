@@ -55,11 +55,22 @@
              </div> 
             <div class="body_general" id="index"> 
                 <h1>試験一覧</h1>
-                @foreach ($years as $year)
-                    <div class='years'>
-                        <a href="/exam/{{ $year->id }}">▶ {{ $year->year }}</a>
-                    </div>
-                @endforeach
+                <!--@foreach ($years as $year)-->
+                <!--    <div class='years'>-->
+                <!--        <a href="/exam/{{ $year->id }}">▶ {{ $year->year }}</a>-->
+                <!--    </div>-->
+                <!--@endforeach-->
+                <div class="years">
+                    <a href="/exam/1">
+                        <img src="https://res.cloudinary.com/dghx8vbna/image/upload/v1692596900/2023%E5%B9%B4%E3%83%90%E3%83%8A%E3%83%BC_u5xxwf.jpg" alt="2023年">
+                    </a>
+                    <a href="/exam/2">
+                        <img src="https://res.cloudinary.com/dghx8vbna/image/upload/v1692599321/2022%E5%B9%B4%E3%83%90%E3%83%8A%E3%83%BC_ts50jt.jpg" alt="2022年">
+                    </a>
+                    <a href="/exam/3">
+                        <img src="https://res.cloudinary.com/dghx8vbna/image/upload/v1692599321/2021%E5%B9%B4%E3%83%90%E3%83%8A%E3%83%BC_vesoxj.jpg" alt="2021年">
+                    </a>
+                </div>
                 <div class="exam_score_history">
                     <h3>{{ Auth::user()->name }}さんの成績</h3>
                     <table class="exam_score_table">

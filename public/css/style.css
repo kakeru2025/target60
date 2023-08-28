@@ -89,63 +89,96 @@ th {
 
 /*【TopPageについてのCSS】*/
 /*[TopPage] 全体の骨格*/
-.container_toppage {
-    display: block;
-    width: 100%;
-}
-.header_toppage {
-    height: 60px;
-    width: 100%;
-    margin: 0;
-    text-align:center; 
-    background-color: #215bb2;
-}
-.toppage_content {
-    display: flex;
-    width: 100%;
-}
-.sidebar_toppage {
-    width: 20%;
-}
-.body_toppage {
-    display: block;
+/*.container_toppage {*/
+/*    display: block;*/
+/*    width: 100%;*/
+/*}*/
+/*.header_toppage {*/
+/*    height: 60px;*/
+/*    width: 100%;*/
+/*    margin: 0;*/
+/*    text-align:center; */
+/*    background-color: #215bb2;*/
+/*}*/
+/*.toppage_content {*/
+/*    display: flex;*/
+/*    width: 100%;*/
+/*}*/
+/*.sidebar_toppage {*/
+/*    width: 20%;*/
+/*}*/
+/*.body_toppage {*/
+/*    display: block;*/
     
-}
+/*}*/
 /*[TopPage] 要素の詳細*/
 /*・サイドバー*/
-.logo {
-    height: 250px;
+/*.logo {*/
+/*    height: 250px;*/
+/*    text-align: center;*/
+/*    box-sizing: border-box;*/
+/*}*/
+
+/*.sidebar_category ul {*/
+/*    padding-left: 0px;*/
+/*}*/
+
+/*.sidebar_category ul li {*/
+/*    list-style:none;*/
+/*    width: 100%;*/
+/*    padding-left: 40px;*/
+/*    font-weight: bold;*/
+/*    cursor: pointer;*/
+/*    border-bottom: 1px dotted;*/
+/*    box-sizing: border-box;*/
+/*}*/
+
+/*.SC_exam {*/
+/*    border-top: 1px dotted;*/
+/*    box-sizing: border-box;*/
+/*}*/
+
+/*.sidebar_category ul li h2 {*/
+/*    color:orange;*/
+/*}*/
+
+/*.sidebar_category ul li p { */
+/*    color:black;*/
+/*}*/
+
+
+
+.upper_toppage,
+.middle_toppage {
+    display: flex;
+}
+.upper_toppage img {
+    width: 30%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: orange;
+    border: 3px solid black;
+}
+.upper_right_toppage {
+    width: 70%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     text-align: center;
-    box-sizing: border-box;
+    position: relative;
+    background: radial-gradient(rgb(169, 214, 255), rgb(0, 80, 159));
+    border: 3px solid black;
 }
-
-.sidebar_category ul {
-    padding-left: 0px;
+.upper_right_toppage_words {
+  width: 100%;
+  top: 50%;
+  position: absolute;
+  transform: translateY(-50%);
 }
-
-.sidebar_category ul li {
-    list-style:none;
+.middle_toppage img {
     width: 100%;
-    padding-left: 40px;
-    font-weight: bold;
-    cursor: pointer;
-    border-bottom: 1px dotted;
-    box-sizing: border-box;
 }
-
-.SC_exam {
-    border-top: 1px dotted;
-    box-sizing: border-box;
-}
-
-.sidebar_category ul li h2 {
-    color:orange;
-}
-
-.sidebar_category ul li p { 
-    color:black;
-}
-
 
 
 
@@ -177,14 +210,19 @@ th {
     margin-top: 80px;
 }
 /*[Header] ヘッダー中央*/
+.app_name {
+    display: flex;
+    justify-content: center;
+}
 .app_name a {
     display: flex;
     height: 100%;
+    width: 20%;
     font-size: 50px;
     font-family: 'Impact';
     color: white;
     align-items: center;
-    justify-content: center;
+    
     vertical-align:top;
 }
 /*[Header] サイドバー*/
@@ -375,8 +413,8 @@ input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
   width: 10px;
   height: 10px;
   content: '';
-  border-style: solid;
-  border-color: #b70505 transparent transparent transparent;
+  /*border-style: solid;*/
+  /*border-color: #b70505 transparent transparent transparent;*/
 }
 #mypage h1 span:before {
   left: 0;
@@ -406,7 +444,8 @@ input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
 .my_profile img {
     height: 250px;
     width: 250px;
-    /*background-color: red*/
+    border: 5px solid #FFF;
+    box-shadow: 0 0 5px #999;
 }
 /*[MyPage] プロフィル文章*/
 .profile_statements {
@@ -579,6 +618,16 @@ th {
     margin-left: 10%;
     box-sizing: border-box;
     border: 3px solid black;
+}
+.years {
+    width: 80%;
+    margin: 30px 10% 30px 10%;
+    box-sizing: border-box;
+    border: 3px solid black;
+}
+.years img {
+    width: 50%;
+    margin-left: 25%;
 }
 .exam_score_history {
     width: 80%;

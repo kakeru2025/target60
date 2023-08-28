@@ -20,7 +20,7 @@ class CommentarySeeder extends Seeder
             'category_id' => '1',
             'name' => '正負の数',
             'onepoint_advice_url' => 'https://res.cloudinary.com/dghx8vbna/image/upload/v1691801273/target60/commentaries/seihunokazu.jpg',
-            'content' => '仮置き｜asd｜仮置き',
+            'content' => '中学校に入学して最初に学ぶ単元。難しく考える必要はありません。冷静に取り組めば、問題ありません。｜大問1の(1)には必ずこの「正負の数」の簡単な計算問題が出てきます。｜確実に解けるように練習しましょう。',
         ]);
     }
 }

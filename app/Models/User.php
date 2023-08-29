@@ -62,4 +62,10 @@ class User extends Authenticatable
     {
         return $this->hasMany(ExamComment::class);
     }
+    
+    //Taskに対するリレーション
+    public function tasks()
+    {
+        return $this->hasMany(Task::class);
+    }
 }

@@ -20,6 +20,7 @@ return new class extends Migration
             $table->unsignedTinyInteger('subnumber')->nullable();
             $table->text('question_string');
             $table->string('question_image_url')->nullable();
+            $table->string('answer_hidden', 50);
             $table->string('answer', 50);
             $table->text('explanation_string');
             $table->string('explanation_image_url')->nullable();

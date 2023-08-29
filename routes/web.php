@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ExamController;
 use App\Http\Controllers\CommentaryController;
 use App\Http\Controllers\MypageController;
+use App\Http\Controllers\TaskController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -33,7 +34,6 @@ Route::middleware('auth')->group(function () {
     //CommentaryController
     Route::get('/commentary', [CommentaryController::class, 'unit'])->name('commentaries.unit');;
     Route::get('/commentary/{commentary}', [CommentaryController::class, 'commentary']);
-    //
     //MypageContoller
     Route::get('/', [MypageController::class, 'toppage']);
     Route::get('/mypage', [MypageController::class, 'mypage']);
@@ -42,6 +42,11 @@ Route::middleware('auth')->group(function () {
         return view('mypages.edit');
     });
     Route::put('/mypage', [MypageController::class, 'store']);
+    //TaskController
+    Route::post('/mypage',[TaskController::class, 'create']);
+    Route::get('/tasks/{task}/edit',[TaskController::class, 'edit']);
+    Route::put('/tasks/{task}', [TaskController::class, 'update']);
+    Route::delete('/tasks/{task}',[TaskController::class, 'delete']);
 });
 
 Route::get('/', [MypageController::class, 'toppage']);

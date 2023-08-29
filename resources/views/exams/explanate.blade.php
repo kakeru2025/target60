@@ -4,6 +4,7 @@
         <meta charset="utf-8">
         <title>試験解説</title>
         <link href="/css/style.css" rel="stylesheet">
+        <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
     </head>
     <body>
         <div class="container_general">
@@ -86,8 +87,10 @@
                             @endphp
                             <div>問題{{ $exam->number }}</div>
                             <div>あなたの回答：{{ $my_answer }}</div>
-                            <div>正答：{{ $exam->answer }}</div>
+                            <div>正答：{!! $exam->answer !!}</div>
                             <div>解説：{{ $exam->explanation_string }}</div>
+                            <div>正答(kari)：{{ $exam->answer_hidden }}</div>
+                            <div>カテゴリー：{{ $exam->category->name }}</div>
                         </div>
                     @endforeach
                 </div>

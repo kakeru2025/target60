@@ -17,7 +17,7 @@
                                 数字と文字と記号は全て半角で入力
                         </li>
                         <li>
-                                「x=○ y=○」のように、空白は半角スペース
+                                「x=○, y=○」のように、空白は半角スペース
                         </li>
                     </ul>
                 </div>
@@ -27,6 +27,7 @@
                         @foreach ($year->exams as $exam)
                             <div class='exam'>
                                 <p>問題{{ $exam->number }}：{!! $exam->question_string !!}</p>
+                                <img src="{{ $exam->question_image_url }}"><br>
                                 <input type="text" name="my_answer[{{ $exam->id }}]" placeholder="入力欄"/>
                                 <input type="hidden" name="result[exam_id]" value="{{ $exam->id }}">
                             </div>

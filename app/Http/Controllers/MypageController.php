@@ -9,6 +9,7 @@ use App\Models\Exam;
 use App\Models\Result;
 use App\Models\Category;
 use App\Models\Saying;
+use App\Models\Task;
 use Illuminate\Support\Facades\Auth;
 use Cloudinary;
 
@@ -25,13 +26,14 @@ class MypageController extends Controller
     } 
     
     // mypage：マイページを表示する
-    public function mypage(Year $year, Exam $exam, Result $result, Category $category)
+    public function mypage(Year $year, Exam $exam, Result $result, Category $category, Task $task)
     {
         return view('mypages.mypage')->with([
             'years' => $year->get(),
             'exams' => $exam->get(),
             'results' => $result->get(),
             'categories' => $category->get(),
+            'tasks' => $task->get()
         ]);
     }
     

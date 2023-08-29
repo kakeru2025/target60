@@ -35,9 +35,9 @@ class ExamController extends Controller
     public function explanate(Year $year, Exam $exam, Request $request)
     {
         $input = $request['my_answer'];
-        $results=[];
+        $results = [];
         foreach ($year->exams()->get() as $exam) {
-            $result=new Result();
+            $result = new Result();
             if ($input[$exam->id] == $exam->answer) {
                 $result->is_correct = true;
                 $result->exam_id = $exam->id;

@@ -4,16 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use App\Models\Year;
-use App\Models\Exam;
-use App\Models\Result;
-use App\Models\Category;
 use App\Models\Task;
 
 class TaskController extends Controller
 {
     // create：タスクを追加する
-    public function create(Year $year, Exam $exam, Result $result, Category $category, Task $task, Request $request)
+    public function create(Task $task, Request $request)
     {
         $task = new Task();
         $input = $request['task'];
@@ -21,13 +17,7 @@ class TaskController extends Controller
         $task -> user_id = Auth::user()->id;
         $task -> save();
         
-        return view('mypages.mypage')->with([
-            'years' => $year->get(),
-            'exams' => $exam->get(),
-            'results' => $result->get(),
-            'categories' => $category->get(),
-            'tasks' => $task->get(),
-        ]);
+        return redirect('/mypage');
     }
     
     // edit：タスク編集ページを表示する
@@ -39,10 +29,17 @@ class TaskController extends Controller
     // update：タスクを更新する
     public function update(Task $task, Request $request)
     {
+        if ($request->status === null) {
+            //タスク内容を変更
+            $input = $request['task'];
+            $task -> name = $input["name"];
+            $task -> save();
+        } else {
+            //タスクが完了
+            $task -> status = true;
+            $task -> save();
+        }
         
-        $input = $request['task'];
-        $task -> name = $input["name"];
-        $task -> save();
         return redirect('/mypage');
     } 
     

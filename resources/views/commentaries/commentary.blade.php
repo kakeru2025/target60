@@ -6,19 +6,63 @@
         <link href="/css/style.css" rel="stylesheet">
     </head>
     <body>
-        <div class="body_general" id="commentary">
-            <h1><span>{{ $commentary->id }}</span>{{ $commentary->name }}</h1>
-            <div class="mypage_block">
-            <!--<div class="onepoint_advice">-->
-                <h3>＜ここだけチェック👍＞</h3>
-                <img src="{{$commentary->onepoint_advice_url}}" alt="comming soon">
-            </div>
-            <div class="mypage_block">
-            <!--<div class="attitude">-->
-                <h3>＜心構え＞</h3>
-                <p id="attitude_statement">{!! $commentary->content !!}</p>
-                
-            </div>
-        </diV>
+        <div class="container_general">
+            <div class="header_general">
+                <input type="checkbox" class="openSidebarMenu" id="openSidebarMenu">
+                <label for="openSidebarMenu" class="sidebarIconToggle">
+                    <div class="spinner diagonal part-1"></div>
+                    <div class="spinner horizontal"></div>
+                    <div class="spinner diagonal part-2"></div>
+                </label>
+                <div class="app_name">
+                    <a href="../">
+                        <span>target60</span>
+                        <img src="https://res.cloudinary.com/dghx8vbna/image/upload/v1691562396/target60_%E4%B8%B8%E3%83%AD%E3%82%B4_jzlczt.png" alt="target60ロゴ">
+                    </a>
+                </diV>
+                <div class="sidebar_open">
+                    <div class="logo" id="domino">
+                        <a href="../">
+                            <img src="https://res.cloudinary.com/dghx8vbna/image/upload/v1691553200/target60_logo_acklds.png" alt="ドミノ">
+                        </a>
+                    </div>
+                    <div class="sidebar_category">
+                        <ul>
+                            <li class="SC_exam">
+                                <a href="../exam">
+                                    <h2>試験ページ</h2>
+                                    <p>実力を確かめたいあなたへ</p>
+                                </a>
+                            </li>
+                            <li class="SC_commentary">
+                                <a href="../commentary">
+                                    <h2>解説ページ</h2>
+                                    <p>実力を高めたいあなたへ</p>
+                                </a>
+                            </li>
+                            <li class="SC_mypage">
+                                <a href="../mypage">
+                                    <h2>マイページ</h2>
+                                    <p>自分を把握したいあなたへ</p>
+                                </a>
+                            </li>  
+                        </ul>
+                    </div>
+                </div>
+              </div>
+             </div>
+            <div class="body_general" id="commentary">
+                <h1><span>{{ $commentary->id }}</span>{{ $commentary->name }}</h1>
+                <div class="block_tpl2">
+                    <h3>＜ここだけチェック👍＞</h3>
+                    <img src="{{$commentary->onepoint_advice_url}}" alt="comming soon">
+                </div>
+                <div class="block_tpl2">
+                    <h3>＜心構え＞</h3>
+                    <p id="attitude_statement">{!! $commentary->content !!}</p>
+                </div>
+                <a class="general_btn" href='/commentary'>戻る</a>
+            </diV>
+        </div>
     </body>
 </html>

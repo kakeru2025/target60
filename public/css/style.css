@@ -1,7 +1,7 @@
 /*【全体】*/
 a {
-  text-decoration: none;
-  color: black;
+    text-decoration: none;
+    color: black;
 }
 
 body{
@@ -10,62 +10,59 @@ body{
 
 
 
-
-
-
 /*【共通】*/
-/*[クリップ風小見出しh3]*/
-#mypage h3,
-#commentary h3 {
-  position: relative;
-  display: inline-block;
-  margin: 1rem 0 1rem -10px;
-  padding: 1rem 3rem;
-  color: #fff;
-  border-radius: 0 100vh 100vh 0;
-  background: #215bb2;
-  -webkit-box-shadow: 3px 3px 5px rgba(0, 0, 0, .2);
-  box-shadow: 3px 3px 5px rgba(0, 0, 0, .2);
-}
-#mypage h3:before,
-#commentary h3:before {
-  position: absolute;
-  bottom: -10px;
-  left: 0;
-  width: 0;
-  height: 0;
-  content: '';
-  border-top: 10px solid #005276;
-  border-left: 10px solid transparent;
-}
-
 /*[見出しh1]*/
 #index h1:first-letter,
 #examine h1:first-letter,
 #explanate h1:first-letter,
 #unit h1:first-letter,
 #commentary h1:first-letter {
-  font-size: 150%;
-  color: #eb6100;
+    font-size: 150%;
+    color: #eb6100;
 }
 #index h1,
 #examine h1,
 #explanate h1,
-#unit h1 { 
-  position: relative;
-  padding: 0.3em;
+#unit h1 {
+    position: relative;
+    padding: 0.3em;
 }
 #index h1:after,
 #examine h1:after,
 #explanate h1:after,
 #unit h1:after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 7px;
-  background: repeating-linear-gradient(-45deg, skyblue, skyblue 2px, white 2px, white 4px);
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 7px;
+    background: repeating-linear-gradient(-45deg, skyblue, skyblue 2px, white 2px, white 4px);
+}
+
+/*[クリップ風小見出しh3]*/
+#mypage h3,
+#commentary h3 {
+    position: relative;
+    display: inline-block;
+    margin: 1rem 0 1rem -10px;
+    padding: 1rem 3rem;
+    color: #fff;
+    border-radius: 0 100vh 100vh 0;
+    background: #215bb2;
+    -webkit-box-shadow: 3px 3px 5px rgba(0, 0, 0, .2);
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, .2);
+}
+#mypage h3:before,
+#commentary h3:before {
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 0;
+    height: 0;
+    content: '';
+    border-top: 10px solid #005276;
+    border-left: 10px solid transparent;
 }
 
 /*[得点表]*/
@@ -86,100 +83,31 @@ th {
     background-color: #215bb2;
 }
 
-
-/*【TopPageについてのCSS】*/
-/*[TopPage] 全体の骨格*/
-/*.container_toppage {*/
-/*    display: block;*/
-/*    width: 100%;*/
-/*}*/
-/*.header_toppage {*/
-/*    height: 60px;*/
-/*    width: 100%;*/
-/*    margin: 0;*/
-/*    text-align:center; */
-/*    background-color: #215bb2;*/
-/*}*/
-/*.toppage_content {*/
-/*    display: flex;*/
-/*    width: 100%;*/
-/*}*/
-/*.sidebar_toppage {*/
-/*    width: 20%;*/
-/*}*/
-/*.body_toppage {*/
-/*    display: block;*/
-    
-/*}*/
-/*[TopPage] 要素の詳細*/
-/*・サイドバー*/
-/*.logo {*/
-/*    height: 250px;*/
-/*    text-align: center;*/
-/*    box-sizing: border-box;*/
-/*}*/
-
-/*.sidebar_category ul {*/
-/*    padding-left: 0px;*/
-/*}*/
-
-/*.sidebar_category ul li {*/
-/*    list-style:none;*/
-/*    width: 100%;*/
-/*    padding-left: 40px;*/
-/*    font-weight: bold;*/
-/*    cursor: pointer;*/
-/*    border-bottom: 1px dotted;*/
-/*    box-sizing: border-box;*/
-/*}*/
-
-/*.SC_exam {*/
-/*    border-top: 1px dotted;*/
-/*    box-sizing: border-box;*/
-/*}*/
-
-/*.sidebar_category ul li h2 {*/
-/*    color:orange;*/
-/*}*/
-
-/*.sidebar_category ul li p { */
-/*    color:black;*/
-/*}*/
-
-
-
-.upper_toppage,
-.middle_toppage {
-    display: flex;
+/*[一般ボタン]*/
+.general_btn {
+    display: block;
+	text-align: center;
+	vertical-align: middle;
+	text-decoration: none;
+	width: 50px;
+	margin: auto;
+	margin-bottom: 20px;
+	padding: 1rem 4rem;
+	font-weight: bold;
+	color: #27acd9;
+	background-color: white;
+	border-bottom: 2px solid #27acd9;
+	border-radius: 100vh;
+	box-shadow: 0 2px 7px rgba(0, 0, 0, .3);
+	-webkit-box-shadow: 0 2px 7px rgba(0, 0, 0, .3);
+	transition: 0.5s;
 }
-.upper_toppage img {
-    width: 30%;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    background-color: orange;
-    border: 3px solid black;
+.general_btn:hover {
+	color: #fff;
+	background: #27acd9;
+	border-bottom: 2px solid #fff;
+	transform: translateY(3px);
 }
-.upper_right_toppage {
-    width: 70%;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    text-align: center;
-    position: relative;
-    background: radial-gradient(rgb(169, 214, 255), rgb(0, 80, 159));
-    border: 3px solid black;
-}
-.upper_right_toppage_words {
-  width: 100%;
-  top: 50%;
-  position: absolute;
-  transform: translateY(-50%);
-}
-.middle_toppage img {
-    width: 100%;
-}
-
 
 
 
@@ -209,6 +137,7 @@ th {
     width: 100%;
     margin-top: 80px;
 }
+
 /*[Header] ヘッダー中央*/
 .app_name {
     display: flex;
@@ -225,6 +154,7 @@ th {
     
     vertical-align:top;
 }
+
 /*[Header] サイドバー*/
 .sidebar_open {
     display: block;
@@ -236,6 +166,7 @@ th {
     transition: transform 300ms ease-in-out;
     background: linear-gradient(180deg, white, #3F5EFB);
 }
+
 /*[Header] サイドバー中身*/
 .logo {
     width: 96%;
@@ -270,6 +201,7 @@ th {
 .sidebar_category ul li p { 
     color:black;
 }
+
 /*[Header] サイドバー発火の論理*/
 input[type="checkbox"]:checked ~ .sidebar_open {
     transform: translateX(0);
@@ -340,6 +272,124 @@ input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
 
 
 
+/*【TopPageについてのCSS】*/
+/*[TopPage] 全体の骨格*/
+.body_toppage {
+    width: 100%;
+    margin-top: 60px;
+}
+.upper_toppage,
+.lower_toppage {
+    display: flex;
+}
+.upper_toppage img {
+    width: 30%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: orange;
+}
+.upper_right_toppage {
+    width: 70%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-align: center;
+    position: relative;
+    background: radial-gradient(rgb(169, 214, 255), rgb(0, 80, 159));
+}
+.upper_right_toppage_words {
+    width: 100%;
+    top: 50%;
+    position: absolute;
+    transform: translateY(-50%);
+}
+/*.middle_toppage {*/
+/*    width:20%;*/
+/*    height: 50%;*/
+/*    margin: 2% 40%;*/
+   
+/*    border: double 5px #4ec4d3;*/
+/*    box-sizing: border-box;*/
+/*}*/
+
+.btn {
+    margin: 2% 40%;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.5;
+  position: relative;
+  display: inline-block;
+  padding: 1rem 4rem;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  color: #212529;
+  border-radius: 0.5rem;
+}
+.btn--blue {
+  color: #fff;
+  background-color: #eb6100;
+  border-bottom: 5px solid #b84c00;
+}
+.btn--blue:hover {
+  margin-top: 3px;
+  color: #fff;
+  background: #f56500;
+  border-bottom: 2px solid #b84c00;
+}
+.btn--shadow {
+  -webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
+  box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
+}
+
+
+.lower_toppage img {
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.mypage_block,
+.block_tpl {
+    margin: 5% 5%;
+}
+
+.block_tpl2{
+    margin: 5% 5%;
+    border: 3px solid black;
+    box-sizing: border-box;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*【MyPageについてのCSS】*/
 /*[Mypage] 全体の骨格*/
@@ -349,90 +399,62 @@ input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
     border: 3px solid black;
     box-sizing: border-box;
 }
-.mypage_block {
-    margin: 5% 5%;
-    border: 3px solid black;
-    box-sizing: border-box;
-    /*background-color: rgba(255,165,0,0.6);*/
-}
 
-
-#mypage h1:after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 7px;
-  background: none;
-}
-
-/*[MyPage] タイトル*/
-/*文字位置*/
+/*[MyPage] タイトル～〇〇さんのタイトル～*/
 #mypage h1 {
- position: relative;
- margin: 30px;
- 
- padding: 0;
- 
- text-align: center;
+    position: relative;
+    margin: 30px;
+    text-align: center;
 }
-/*端の折りたたまれている部分*/
-#mypage h1:before, #mypage h1:after {
-  position: absolute;
-  z-index: 0;
-  bottom: -10px;
-  display: block;
-  content: '';
-  border: 1em solid #d90606;
+#mypage h1:before,
+#mypage h1:after {
+    position: absolute;
+    z-index: 0;
+    bottom: -10px;
+    display: block;
+    content: '';
+    border: 1em solid #d90606;
 }
 #mypage h1:before {
-  left: -30px;
-  border-left-width: 15px;
-  border-left-color: transparent;
+    left: -30px;
+    border-left-width: 15px;
+    border-left-color: transparent;
 }
 #mypage h1:after {
-  right: -30px;
-  border-right-width: 15px;
-  border-right-color: transparent;
+    right: -30px;
+    border-right-width: 15px;
+    border-right-color: transparent;
 }
-/*中央の四角部分*/
 #mypage h1 span {
-  position: relative;
-  z-index: 1;
-  display: block;
-  padding: 1rem 2rem;
-  color: #fff;
-  background: #fa4141;
+    position: relative;
+    z-index: 1;
+    display: block;
+    padding: 1rem 2rem;
+    color: #fff;
+    background: #fa4141;
 }
-/*2箇所の折り畳み跡*/
-#mypage h1 span:before, h1 span:after {
-  position: absolute;
-  bottom: -10px;
-  display: block;
-  width: 10px;
-  height: 10px;
-  content: '';
-  /*border-style: solid;*/
-  /*border-color: #b70505 transparent transparent transparent;*/
+#mypage h1 span:before,
+#mypage h1 span:after {
+    position: absolute;
+    bottom: -10px;
+    display: block;
+    width: 10px;
+    content: '';
+    border-style: solid;
+    border-color: #b70505 transparent transparent transparent;
 }
 #mypage h1 span:before {
-  left: 0;
-  border-width: 10px 0 0 10px;
+    left: 0;
+    border-width: 10px 0 0 10px;
 }
 #mypage h1 span:after {
-  right: 0;
-  border-width: 10px 10px 0 0;
+    right: 0;
+    border-width: 10px 10px 0 0;
 }
-
-
-
 #mypage h1:first-letter {
-  font-size: 100%;
-  color: #fff;
+    font-size: 100%;
+    color: #fff;
 }
-
-
 
 /*[MyPage] プロフィール写真*/
 .my_profile {
@@ -447,6 +469,7 @@ input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
     border: 5px solid #FFF;
     box-shadow: 0 0 5px #999;
 }
+
 /*[MyPage] プロフィル文章*/
 .profile_statements {
     margin-left: 5%;
@@ -466,40 +489,31 @@ input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
     color: black;
     background: linear-gradient(transparent 70%, yellow 70%);
 }
-/*[MyPage] 編集ボタン*/
-.edit_btn {
-	display: block;
-	text-align: center;
-	vertical-align: middle;
-	text-decoration: none;
-	width: 50px;
-	margin: auto;
-	margin-bottom: 20px;
-	padding: 1rem 4rem;
-	font-weight: bold;
-	color: #27acd9;
-	background-color: white;
-	border-bottom: 2px solid #27acd9;
-	border-radius: 100vh;
-	box-shadow: 0 2px 7px rgba(0, 0, 0, .3);
-	-webkit-box-shadow: 0 2px 7px rgba(0, 0, 0, .3);
-	transition: 0.5s;
-}
-.edit_btn:hover {
-	color: #fff;
-	background: #27acd9;
-	border-bottom: 2px solid #fff;
-	transform: translateY(3px);
-}
+
 /*[MyPage] 得点の棒グラフ*/
 .my_scores, .my_scores_detail {
     margin: 5%;
 }
+
 /*[MyPage] 単元ごとの得点*/
 .my_scores_detail {
     margin-top: 20px;
     margin-bottom: 20px;
 }
+
+/*[MyPage] To Do List*/
+.to_do_list_addition {
+    margin: 5%;
+    font-weight: bold;
+    color: blue;
+    text-align: center;
+}
+#to_do_list table {
+    margin-bottom: 5%;
+}
+
+
+
 
 
 /*explanationについてのCSS*/
@@ -554,6 +568,30 @@ th {
 }
 
 
+/*.exam_true {*/
+/*    color: red;*/
+/*}*/
+/*.exam_true {*/
+/*    color: blue;*/
+/*}*/
+
+
+.exam_explantion {
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
+
+/*UnitPageについてのCSS】*/
+/*[UnitPage] 詳細部分*/
+#unit {
+    width: 80%;
+    margin-left: 10%;
+    border: 3px solid black;
+    box-sizing: border-box;
+}
+.unit_search {
+    text-align:center; 
+}
 
 /*CommentaryPageについてのCSS】*/
 /*[CommentaryPage] 詳細部分*/
@@ -667,6 +705,11 @@ th {
     border-radius: 3px;
     border: 2px solid #ddd; 
     box-sizing: border-box; 
+}
+.exam img {
+    margin-left: 20%;
+    width:60%;
+    text-align: center;
 }
 .exams_submit {
     text-align: center;

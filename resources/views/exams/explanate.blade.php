@@ -16,33 +16,33 @@
                     <div class="spinner diagonal part-2"></div>
                 </label>
                 <div class="app_name">
-                    <a href="./">
+                    <a href="../../">
                         <span>target60</span>
                         <img src="https://res.cloudinary.com/dghx8vbna/image/upload/v1691562396/target60_%E4%B8%B8%E3%83%AD%E3%82%B4_jzlczt.png" alt="target60ロゴ">
                     </a>
                 </diV>
                 <div class="sidebar_open">
                     <div class="logo" id="domino">
-                        <a href="./">
+                        <a href="../../">
                             <img src="https://res.cloudinary.com/dghx8vbna/image/upload/v1691553200/target60_logo_acklds.png" alt="ドミノ">
                         </a>
                     </div>
                     <div class="sidebar_category">
                         <ul>
                             <li class="SC_exam">
-                                <a href="./exam">
+                                <a href="../../exam">
                                     <h2>試験ページ</h2>
                                     <p>実力を確かめたいあなたへ</p>
                                 </a>
                             </li>
                             <li class="SC_commentary">
-                                <a href="./commentary">
+                                <a href="../../commentary">
                                     <h2>解説ページ</h2>
                                     <p>実力を高めたいあなたへ</p>
                                 </a>
                             </li>
                             <li class="SC_mypage">
-                                <a href="./mypage">
+                                <a href="../../mypage">
                                     <h2>マイページ</h2>
                                     <p>自分を把握したいあなたへ</p>
                                 </a>
@@ -66,12 +66,12 @@
                         @foreach ($results as $result)
                             <tr>
                                 @if ($result->is_correct == true) 
-                                    <td>問題{{ $result->exam->number }}</td> <td>正解</td>
+                                    <td>問題{{ $result->exam->number }}</td> <td><span class="exam_true">〇</span></td>
                                     @php
                                         $sum = $sum + 4
                                     @endphp
                                 @else 
-                                    <td>問題{{ $result->exam->number }}</td> <td>不正解</td>
+                                    <td>問題{{ $result->exam->number }}</td> <td><span class="exam_false">☓</span></td>
                                 @endif
                             </tr>
                         @endforeach
@@ -86,15 +86,14 @@
                                 $my_answer = $my_answers[$exam->id];
                             @endphp
                             <div>問題{{ $exam->number }}</div>
+                            <div>カテゴリー：{{ $exam->category->name }}</div>
                             <div>あなたの回答：{{ $my_answer }}</div>
                             <div>正答：{!! $exam->answer !!}</div>
                             <div>解説：{{ $exam->explanation_string }}</div>
-                            <div>正答(kari)：{{ $exam->answer_hidden }}</div>
-                            <div>カテゴリー：{{ $exam->category->name }}</div>
                         </div>
                     @endforeach
                 </div>
-                <a href='/exam/{{ $year->id }}'>戻る</a>
+                <a class="general_btn" href='/exam/{{ $year->id }}'>戻る</a>
             </div>
         </div>
     </body>

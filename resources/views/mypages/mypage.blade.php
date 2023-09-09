@@ -53,58 +53,8 @@
               </div>
              </div> 
             <div class="body_general" id="mypage">
-                
-                <div class="mypage_block">
-                    <h3>＜To Do List＞</h3>
-                    <p>今日やることを決めよう！</p>
-                    <form action="/mypage" method="post">
-                        @csrf
-                        <input type="text" name="task[name]" placeholder="一次方程式を完璧にする！"/>
-                        <input type="submit" value="追加"/>
-                    </form>
-                    
-                    <table>@foreach ($tasks as $task)
-                        <tr>
-                            <td>{{ $task->name }}</td>
-                            <td>
-                                <div>
-                                    <form action="/tasks/{{ $task->id }}" method="post">
-                                        @csrf
-                                        @method('PUT')
-                                        <input type="submit" value="完了"/>
-                                    </form>
-                                </div>
-                            </td>
-                            <td>
-                                <div>
-                                    <a href="/tasks/{{ $task->id }}/edit/">編集</a>
-                                </div>
-                            </td>
-                            <td>
-                                 <div>
-                                    <form action="/tasks/{{ $task->id }}" method="post" onsubmit="return deleteTask();">
-                                        @csrf
-                                        @method('DELETE')
-                                        <input type="submit" value="削除"/>
-                                    </form>
-                                </div>
-                            </td>
-                        </tr>
-                    @endforeach</table>
-                </div>
-                 
-                <script>
-    function deleteTask() {
-        if (confirm('本当に削除しますか？')) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-  </script>
-                  
                 <h1><span>{{ Auth::user()->name }}さんのページ</span></h1>
-                <div class="mypage_block">
+                <div class="block_tpl2">
                     <h3>＜プロフィール＞</h3>
                     <div class="my_profile">
                         <img src="{{ Auth::user()->image_url }}" alt="あなたのイラスト">
@@ -118,9 +68,9 @@
                             </div>
                         </div>
                     </div>
-                    <a class="edit_btn" href='/mypage/edit'>編集</a>
+                    <a class="general_btn" href='/mypage/edit'>編集</a>
                 </div>
-                <div class="mypage_block">
+                <div class="block_tpl2">
                     <h3>＜今までの結果＞</h3>
                     <div class="my_scores">
                         @php
@@ -201,7 +151,7 @@
                         </script>   
                     </div>
                 </div>
-                <div class="mypage_block">
+                <div class="block_tpl2">
                     <h3>＜詳細＞</h3>
                     <div class="my_scores_detail">
                         <table>
@@ -260,8 +210,58 @@
                         </table>
                     </div>
                 </div>
+                <div class="block_tpl2" id="to_do_list">
+                    <h3>＜To Do List＞</h3>
+                    <div class="to_do_list_addition">
+                        <p>今日やることを決めよう！</p>
+                        <form action="/mypage" method="post">
+                            @csrf
+                            <input type="text" name="task[name]" placeholder="一次方程式を完璧にする！"/>
+                            <input type="submit" value="追加"/>
+                        </form>
+                    </div>
+                    <table>
+                        @foreach ($tasks as $task)
+                            <tr>
+                                <td>{{ $task->name }}</td>
+                                <td>
+                                    <div>
+                                        <form action="/tasks/{{ $task->id }}" method="post">
+                                            @csrf
+                                            @method('PUT')
+                                            <input type="hidden" name="status" value="{{ $task->status }}">
+                                            <input type="submit" value="完了"/>
+                                        </form>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <a href="/tasks/{{ $task->id }}/edit/">編集</a>
+                                    </div>
+                                </td>
+                                <td>
+                                     <div>
+                                        <form action="/tasks/{{ $task->id }}" method="post" onsubmit="return deleteTask();">
+                                            @csrf
+                                            @method('DELETE')
+                                            <input type="submit" value="削除"/>
+                                        </form>
+                                    </div>
+                                </td>
+                            </tr>
+                        @endforeach
+                    </table>
+                </div>
+                <script>
+                    function deleteTask() {
+                        if (confirm('本当に削除しますか？')) {
+                            return true;
+                        } else {
+                            return false;
+                        }
+                    }
+                 </script>
             </div>
         </div>
-         
     </body>
 </html>

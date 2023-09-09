@@ -42,7 +42,7 @@ class ExamSeeder extends Seeder
             'question_string' => '\(30xy^2\div5x\div3y\)　を計算しなさい。',
             'answer_hidden' => '2y',
             'answer' => '2y',
-            'explanation_string' => '仮置き',
+            'explanation_string' => '\(30xy^2\div5x\div3y=(30\div5\div3)\times(x\div x)\times(y^2\div y)=2y\)',
             'category_id' => '2',
         ]);
         
@@ -110,7 +110,7 @@ class ExamSeeder extends Seeder
             'answer_hidden' => 'ア, ウ',
             'answer' => 'ア, ウ',
             'explanation_string' => '仮置き',
-            'category_id' => '1',
+            'category_id' => '5',
         ]);
         
         DB::table('exams')->insert([
@@ -152,7 +152,7 @@ class ExamSeeder extends Seeder
             'answer_hidden' => '5/8',
             'answer' => '\(\dfrac{5}{8}\)',
             'explanation_string' => '仮置き',
-            'category_id' => '3',
+            'category_id' => '5',
         ]);
         
         DB::table('exams')->insert([

@@ -16,10 +16,11 @@ class ResultSeeder extends Seeder
      */
     public function run()
     {
+        // 以下テストデータ
         DB::table('results')->insert([
             'exam_id' => 1,
             'user_id' => 1,
-            'is_correct' => 1,
+            'is_correct' => 0,
         ]);
         
         DB::table('results')->insert([
@@ -31,11 +32,83 @@ class ResultSeeder extends Seeder
         DB::table('results')->insert([
             'exam_id' => 3,
             'user_id' => 1,
-            'is_correct' => 0,
+            'is_correct' => 1,
         ]);
         
         DB::table('results')->insert([
             'exam_id' => 4,
+            'user_id' => 1,
+            'is_correct' => 1,
+        ]);
+        
+        DB::table('results')->insert([
+            'exam_id' => 5,
+            'user_id' => 1,
+            'is_correct' => 1,
+        ]);
+        
+        DB::table('results')->insert([
+            'exam_id' => 6,
+            'user_id' => 1,
+            'is_correct' => 1,
+        ]);
+        
+        DB::table('results')->insert([
+            'exam_id' => 7,
+            'user_id' => 1,
+            'is_correct' => 1,
+        ]);
+        
+        DB::table('results')->insert([
+            'exam_id' => 8,
+            'user_id' => 1,
+            'is_correct' => 1,
+        ]);
+        
+        DB::table('results')->insert([
+            'exam_id' => 9,
+            'user_id' => 1,
+            'is_correct' => 0,
+        ]);
+        
+        DB::table('results')->insert([
+            'exam_id' => 10,
+            'user_id' => 1,
+            'is_correct' => 1,
+        ]);
+        
+        DB::table('results')->insert([
+            'exam_id' => 11,
+            'user_id' => 1,
+            'is_correct' => 1,
+        ]);
+        
+        DB::table('results')->insert([
+            'exam_id' => 12,
+            'user_id' => 1,
+            'is_correct' => 0,
+        ]);
+        
+        DB::table('results')->insert([
+            'exam_id' => 13,
+            'user_id' => 1,
+            'is_correct' => 0,
+        ]);
+        
+        DB::table('results')->insert([
+            'exam_id' => 14,
+            'user_id' => 1,
+            'is_correct' => 1,
+        ]);
+        
+        DB::table('results')->insert([
+            'exam_id' => 15,
+            'user_id' => 1,
+            'is_correct' => 1,
+        ]);
+        
+        DB::table('results')->insert([
+            'exam_id' => 18,
             'user_id' => 1,
             'is_correct' => 1,
         ]);

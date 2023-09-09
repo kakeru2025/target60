@@ -12,15 +12,16 @@
             @method('put')
             <div class="edit_item">
                 <p>志望校</p>
-                <input type="text" name="user[target_school]" placeholder="入力欄"/>
+                <input type="text" name="user[target_school]" placeholder="入力欄" value="{{ Auth::user()->target_school }}"/>
             </div>
             <div class="edit_item">
                 <p>コメント</p></p>
-                <textarea name="user[self_introduction]" placeholder="入力欄"></textarea>
+                <input type="text" name="user[self_introduction]" value="{{ Auth::user()->self_introduction }}"/>
             </div>
             <div class="edit_item">
+                <p>あなたのイラスト</p>
                 <input type="file" name="image"/>
             </div>
-            <input type="submit" value="送信"/>
+            <input type="submit" value="保存"/>
         </form>
 </html>

@@ -33,7 +33,7 @@ class MypageController extends Controller
             'exams' => $exam->get(),
             'results' => $result->get(),
             'categories' => $category->get(),
-            'tasks' => $task->get()
+            'tasks' => $task->where('status', false)->get()
         ]);
     }
     
@@ -56,6 +56,7 @@ class MypageController extends Controller
             $input_user += ['image_url' => $image_url];
         }
         $user->fill($input_user)->save();
+        
         return redirect('/mypage');
     }
     

@@ -28,5 +28,13 @@ class UserSeeder extends Seeder
             'target_school' => '所沢高校',
             'self_introduction' => '夏休みからガチります。よろしく！🔥',
         ]);
+        
+        DB::table('users')->insert([
+            'name' => 'テストアカウント',
+            'email' => 'a@gmail.com',
+            'password' => Hash::make('test2023'),
+            'created_at' => new DateTime(),
+            'updated_at' => new DateTime(),
+        ]);
     }
 }

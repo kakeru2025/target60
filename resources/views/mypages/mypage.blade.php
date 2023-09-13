@@ -252,6 +252,19 @@
                         @endforeach
                     </table>
                 </div>
+                
+                
+                <form method="POST" action="{{ route('logout') }}" class="general_btn">
+                            @csrf
+
+                            <x-dropdown-link :href="route('logout')"
+                                    onclick="event.preventDefault();
+                                                this.closest('form').submit();">
+                                {{ __('Log Out') }}
+                            </x-dropdown-link>
+                        </form>
+                
+                
                 <script>
                     function deleteTask() {
                         if (confirm('本当に削除しますか？')) {
